@@ -6,9 +6,9 @@ import Home from './components/Pages/Home/Home';
 import Checkout from './components/Pages/Checkout/Checkout';
 import Blogs from './components/Pages/Blogs/Blogs';
 import About from './components/Pages/About/About';
-import Login from './components/Pages/Login/Login';
 import NotFound from './components/Shared/NotFound/NotFound';
-import SignUp from './components/Pages/SignUp/SignUp';
+import Login from './components/Pages/Login/Login/Login';
+import SignUp from './components/Pages/Login/SignUp/SignUp';
 
 function App() {
   return (
