@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.review-card {
+    width: 400px;
+
+}
+
+.review-pic {
+    width: 70px;
+    height: 70px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}

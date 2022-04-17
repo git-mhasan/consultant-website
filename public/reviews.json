@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "name": "Farhana Kabir",
+        "date": "21-04-2021 12:31pm",
+        "comments": "It is still running good and I bought 5 more for my colleagues, so I bought all together 8 machines. My of my colleagues need more memory while some need less. So what I do is, for those who need more, I took the 4GB RAM out from their machine and put it in the machine of the colleague who needs less. So 1 machine got 2x4G running in dual channel with identical RAM and install a new 2x8G for the original machine. To be honest, difference for 4 to 8 is high, but little difference from 8 to 16. So those in a tight budget can save your money.",
+        "imageUrl": "./images/person-1.jpg",
+        "rating": "5.00"
+    },
+    {
+        "id": "2",
+        "name": "Rupom Ahmed",
+        "date": "31-05-2021 02:12pm",
+        "comments": "What I like most is the screen. It is IPS. At this price point (310 for me), most laptops are bundled with TN display, which be honestly is a deal breaker. The screen here is gorgeous. I do not see much difference to my gaming laptop which cost me thrice. Sound is good, keyboard design average. I don't like the small num pad. Some people complained on the backlight, but I don't need this function. But the num lock indicator, however, is important but wasn't there.",
+        "imageUrl": "./images/person-2.jpg",
+        "rating": "4.75"
+    },
+    {
+        "id": "3",
+        "name": "Asad Mahmud",
+        "date": "31-05-2021 02:12pm",
+        "comments": "This computer has Microsoft 10S. This is scam software by Microsoft to force you to use only Microsoft apps from their deserted island wasteland of an app store. The computer will not allow you to do anything else. You can upgrade to a full version of Microsoft 10. for another $134. Hard pass. STAY AWAY from ALL computers with Microsoft 10S!! Absolute garbage software.",
+        "imageUrl": "./images/person-3.png",
+        "rating": "2.00"
+    },
+    {
+        "id": "4",
+        "name": "Rizvi Islam",
+        "date": "31-05-2021 02:12pm",
+        "comments": "I got this for my ten year old son because it's a great laptop for kids. It has a solid state hard drive which means there's no moving parts and it can take more abuse. In other words I'm not going to worry when my son throws this into his backpack. It's also pretty lightweight and portable.",
+        "imageUrl": "./images/person-4.jpg",
+        "rating": "4.50"
+    },
+    {
+        "id": "5",
+        "name": "Shahanaz Parvin",
+        "date": "31-05-2021 02:12pm",
+        "comments": "The display is great for the price, viewing angles are fantastic. Perfect for media consumption. Easily comparable with labtops 2-2.5 times the price. This is bar far my #1 reason for keeping the machine. speakers arent great though, have bluetooth headphones handy.",
+        "imageUrl": "./images/person-5.jpg",
+        "rating": "4.00"
+    },
+    {
+        "id": "6",
+        "name": "Sadek Sagor",
+        "date": "31-05-2021 02:12pm",
+        "comments": "I bought this laptop for its weight and that's about the only thing positive I can say about it.The processing power is not very strong, so performance-wise, I was not impressed. But with the pricetag considered, I'm all right with this.",
+        "imageUrl": "./images/person-6.png",
+        "rating": "5.00"
+    }
+]

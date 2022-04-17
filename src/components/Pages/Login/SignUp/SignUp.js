@@ -56,27 +56,28 @@ const SignUp = () => {
             <div className='d-flex justify-content-center align-item-center'>
                 <SocialLogin className="d-block">
                 </SocialLogin>
-                <div style={{ height: "340px", width: "1px" }} className="bg-dark" />
-                <Form onSubmit={handleLoginWithEmail}>
-                    <Form.Group className="mb-3" controlId="formBasicName">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control ref={nameRef} type="text" placeholder="Enter Name" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control ref={emailRef} type="email" placeholder="Enter Email" required />
-                    </Form.Group>
+                <div style={{ height: "340px", width: "1px" }} className="bg-dark mx-4" />
+                <div style={{ width: "450px" }}>
+                    <Form onSubmit={handleLoginWithEmail}>
+                        <Form.Group className="mb-3" controlId="formBasicName">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control ref={nameRef} type="text" placeholder="Enter Name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control ref={emailRef} type="email" placeholder="Enter Email" required />
+                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control ref={passRef} type="password" placeholder="Password" required />
-                    </Form.Group>
-                    <p>Have an account? Please <Link to="/login">Login</Link></p>
-                    <Button variant="dark mx-auto d-block" type="submit">
-                        Submit
-                    </Button>
-                </Form>
-
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control ref={passRef} type="password" placeholder="Password" required />
+                        </Form.Group>
+                        <p>Have an account? Please <Link to="/login">Login</Link></p>
+                        <Button variant="dark mx-auto d-block" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
+                </div>
             </div >
             {errorMsg}
         </div >
