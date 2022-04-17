@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../../logo.svg';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import "./Header.css"
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,7 +12,6 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
-
                         <img
                             src={logo}
                             alt=""
