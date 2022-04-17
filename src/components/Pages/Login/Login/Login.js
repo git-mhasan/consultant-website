@@ -1,16 +1,46 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const emailRef = useRef('');
     const passRef = useRef('');
+    const navigate = useNavigate();
+
+    let errorMsg;
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
     const handleLoginWithEmail = (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
-        console.log(email);
+        const pass = passRef.current.value;
+
+        signInWithEmailAndPassword(email, pass);
+    }
+
+    if (error) {
+        errorMsg = <div className='text-danger text-center' style={{ width: "500px", height: "100px" }}>
+            <p className='mt-3'>Error: {error?.message}</p>
+        </div>
+    }
+
+    if (loading) {
+        errorMsg = <div className='text-primary text-center' style={{ width: "500px", height: "100px" }}>
+            <p className='mt-3'>Loading ...</p>
+        </div>
+    }
+
+    if (user) {
+        navigate('/home')
     }
 
     return (
@@ -31,11 +61,12 @@ const Login = () => {
                         <Form.Control ref={passRef} type="password" placeholder="Password" required />
                     </Form.Group>
                     <p>Not Registered? <Link to="/signup">Sign Up</Link></p>
-                    <Button variant="dark" type="submit">
+                    <Button variant="dark mx-auto d-block" type="submit">
                         Submit
                     </Button>
                 </Form>
             </div>
+            {errorMsg}
         </div>
     );
 };

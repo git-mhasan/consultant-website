@@ -1,6 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
@@ -8,17 +10,47 @@ const SignUp = () => {
     const emailRef = useRef('');
     const passRef = useRef('');
 
-    const handleLoginWithEmail = (event) => {
+    const navigate = useNavigate();
+
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
+    let errorMsg;
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    const [updateProfile, updating, errorUpdate] = useUpdateProfile(auth);
+
+    const handleLoginWithEmail = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const pass = passRef.current.value;
-        console.log(name, email, pass);
+        await createUserWithEmailAndPassword(email, pass);
+        await updateProfile({ displayName: name });
+    }
+    if (error || errorUpdate) {
+        errorMsg = <div className='text-danger text-center' style={{ width: "500px", height: "100px" }}>
+            <p className='mt-3'>Error: {error?.message} {errorUpdate?.message}</p>
+        </div>
+    }
+
+    if (loading || updating) {
+        errorMsg = <div className='text-primary text-center' style={{ width: "500px", height: "100px" }}>
+            <p className='mt-3'>Loading ...</p>
+        </div>
+    }
+
+    if (user) {
+        navigate('/home')
     }
 
     return (
         <div className='container mx-auto m-4' style={{ width: "600px", height: "400px" }}>
-            <h2 className='text-center m-5'>Please Sign Up</h2>
+            <h2 className='text-center my-2'>Please Sign Up</h2>
             <div className='d-flex justify-content-center align-item-center'>
                 <SocialLogin className="d-block">
                 </SocialLogin>
@@ -38,12 +70,13 @@ const SignUp = () => {
                         <Form.Control ref={passRef} type="password" placeholder="Password" required />
                     </Form.Group>
                     <p>Have an account? Please <Link to="/login">Login</Link></p>
-                    <Button variant="dark" type="submit">
+                    <Button variant="dark mx-auto d-block" type="submit">
                         Submit
                     </Button>
                 </Form>
-            </div >
 
+            </div >
+            {errorMsg}
         </div >
     );
 };
