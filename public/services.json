@@ -1,0 +1,37 @@
+[
+    {
+        "_id": "1",
+        "title": "Soil Investigation",
+        "price": "8000",
+        "desc": "An important basis for the planning and construction of building and infrastructure projects (comprising various types of structures as foundation, excavation pit, land reclamation, beach nourishment etc.) is the knowledge of the ground conditions. For this purpose, the geotechnical investigation with its respective services shall be carried out. Their nature and extent depends on the type of the structure, the difficulty of the structure and the expected ground conditions.",
+        "imageUrl": "./images/service-1.jpg"
+    },
+    {
+        "_id": "2",
+        "title": "Exterior Design",
+        "price": "25000",
+        "desc": "If you’re starting from scratch with nothing but a dream, I can create beautiful, eye soothing designs to ensure your complete satisfaction. I can also help you at every stage with our expertise in project management.",
+        "imageUrl": "./images/service-2.jpg"
+    },
+    {
+        "_id": "3",
+        "title": "Structural Design",
+        "price": "35000",
+        "desc": "",
+        "imageUrl": "./images/service-2.jpg"
+    },
+    {
+        "_id": "4",
+        "title": "Fire Safety Assessment",
+        "price": "15000",
+        "desc": "",
+        "imageUrl": "./images/service-2.jpg"
+    },
+    {
+        "_id": "5",
+        "title": "Plumbing Solution",
+        "price": "18000",
+        "desc": "",
+        "imageUrl": "./images/service-2.jpg"
+    }
+]

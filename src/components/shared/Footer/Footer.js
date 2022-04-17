@@ -1,10 +1,12 @@
 import React from 'react';
+import "./Footer.css"
 
 const Footer = () => {
+    const yaerNow = new Date().getFullYear();
     return (
-        <div>
-            <h2>This is Footer</h2>
-        </div>
+        <footer>
+            <p>Copywrite @ {yaerNow}</p>
+        </footer>
     );
 };
 

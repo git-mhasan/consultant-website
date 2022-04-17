@@ -1,7 +1,7 @@
 # Construction Consultant
 
 This website is built to provied my construction consultation services as an individual Civil Engineering Consultant in organized and easily accessible manner. I offer the following consultation services:
-* Soil Profile Report.
+* Soil Investigation.
 * Exterior Design.
 * Structural Design.
 * Fire Safety Assessment.
