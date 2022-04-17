@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.service-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+    .service-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .service-section {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+}

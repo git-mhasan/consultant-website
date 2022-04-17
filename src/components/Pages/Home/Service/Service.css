@@ -5,12 +5,13 @@
 }
 
 .service-card {
-    width: 300px;
+    width: 320px;
+    height: 470px;
 
 }
 
 .service-pic {
-    width: 240px;
+    width: 98%;
     /* height: 280px; */
     border: 1px solid lightgray;
 }
