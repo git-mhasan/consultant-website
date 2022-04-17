@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -11,6 +11,8 @@ const SignUp = () => {
     const passRef = useRef('');
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     // const [email, setEmail] = useState('');
     // const [password, setPassword] = useState('');
@@ -45,12 +47,12 @@ const SignUp = () => {
     }
 
     if (user) {
-        navigate('/home')
+        navigate(from, { replace: true });
     }
 
     return (
         <div className='container mx-auto m-4' style={{ width: "600px", height: "400px" }}>
-            <h2 className='text-center my-2'>Please Sign Up</h2>
+            <h2 className='text-center my-3'>Please Sign Up</h2>
             <div className='d-flex justify-content-center align-item-center'>
                 <SocialLogin className="d-block">
                 </SocialLogin>

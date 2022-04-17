@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.init';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     let errorMsg;
 
     const handleGooleSignIn = () => {
@@ -18,11 +20,13 @@ const SocialLogin = () => {
         </div>
     }
     if (loading) {
-
+        errorMsg = <div className='text-primary text-center' style={{ width: "180px", height: "100px" }}>
+            <p className='mt-3'>Loading ...</p>
+        </div>
     }
 
     if (user) {
-        navigate("/home");
+        navigate(from, { replace: true });
     }
 
     return (
