@@ -9,6 +9,7 @@ This website is built to provied my construction consultation services as an ind
 
 ## Features/Functionalities of my website:
 * All available services are listed in Landing page.
+* Specific service can be ordered.
 * Login to track your  service status.
 * Login to track your previous records.
 

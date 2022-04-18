@@ -18,27 +18,27 @@
         "title": "Structural Design",
         "price": "35000",
         "desc": "",
-        "imageUrl": "./images/service-2.jpg"
+        "imageUrl": "./images/service-3.jpg"
     },
     {
         "_id": "4",
         "title": "Fire Safety Assessment",
         "price": "15000",
         "desc": "",
-        "imageUrl": "./images/service-2.jpg"
+        "imageUrl": "./images/service-4.jpg"
     },
     {
         "_id": "5",
         "title": "Plumbing Solution",
         "price": "18000",
         "desc": "",
-        "imageUrl": "./images/service-2.jpg"
+        "imageUrl": "./images/service-5.jpg"
     },
     {
         "_id": "6",
         "title": "Cost Estimate",
         "price": "20000",
         "desc": "",
-        "imageUrl": "./images/service-2.jpg"
+        "imageUrl": "./images/service-6.jpg"
     }
 ]

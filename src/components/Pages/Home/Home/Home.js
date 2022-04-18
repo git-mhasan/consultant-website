@@ -14,23 +14,23 @@ const Home = () => {
 
     const reviews = allReviews?.length > 3 ? [...allReviews].slice(0, 3) : [...allReviews];
     return (
-        <div className='container text-center my-4 mx-auto'>
+        <div className='container text-center mb-4 mx-auto'>
 
             {/* -----------------banner section ---------------------*/}
 
             <div>
-                <div className='grid grid-cols-2 gap-4'>
-                    <div className="my-4">
-                        <div className="my-4 mx-6">
-                            <h2 className='my-3 text-3xl font-bold'>{bannerItems[0]?.title}</h2>
-                            <h3 className='my-3 text-2xl text-blue-500 font-bold'>{bannerItems[0]?.slog}</h3>
-                            <p className='mx-7 text-justify'>{bannerItems[0]?.desc}</p>
+                <div className=''>
+                    <div className="position-relative">
+                        <img className='img-fluid opacity-50' style={{ height: "400px" }} src={bannerItems[0]?.imageUrl} alt="" />
+                    </div>
+                    <div className="container my-4 position-absolute top-0 mx-auto text-center w-50">
+                        <div className="p-3 mt-5">
+                            <h1 className='text-center my-3 text-3xl font-bold'>{bannerItems[0]?.title}</h1>
+                            <h2 className='text-center my-3 text-2xl text-blue-500 font-bold'>{bannerItems[0]?.slog}</h2>
+                            <p className='mx-5 text-justify font-bold d-none d-md-block'>{bannerItems[0]?.desc}</p>
                         </div>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Details</button>
                     </div>
-                    <div className="my-4">
-                        <img src={bannerItems[0]?.imageUrl} alt="" />
-                    </div>
+
                 </div>
 
             </div>
