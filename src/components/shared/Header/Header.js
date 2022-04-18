@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../../logo.svg';
+import logo from '../../../logo.png';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import "./Header.css"
 
@@ -10,7 +10,7 @@ import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 
 const Header = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     const handleSignOut = () => {
         signOut(auth);
@@ -26,7 +26,7 @@ const Header = () => {
                             alt=""
                             width="30"
                             height="30"
-                            className="d-inline-block align-top"
+                            className="d-inline-block align-top me-3"
                         />
                         Construction Consultant
                     </Navbar.Brand>

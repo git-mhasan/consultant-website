@@ -10,7 +10,7 @@ const ReviewCard = ({ review }) => {
                 <div className='m-4 flex'>
                     <img className='review-pic' src={imageUrl} alt="" />
                     <div className='align-middle'>
-                        <h4 className='mx-4 text-left text-base font-bold'> {name}</h4>
+                        <h5 className='mx-4 my-3 text-left text-base font-bold'> {name}</h5>
                         <p className='mx-4 my-1 text-left text-base'>{rating}/5.0 </p>
                     </div>
                 </div>

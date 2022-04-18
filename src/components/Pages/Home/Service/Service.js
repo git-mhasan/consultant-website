@@ -19,7 +19,7 @@ const Service = ({ service }) => {
                     <p className='mx-5 my-1 text-left text-base'>Price: {price} tk</p>
                 </div>
             </div>
-            <p className='text-justify mx-4 mt-3'>{desc?.length > 100 ? desc?.slice(0, 100) + "..." : desc}</p>
+            <p className='text-justify mx-4 mt-3'>{desc?.length > 90 ? desc?.slice(0, 90) + "..." : desc}</p>
             <button onClick={() => { navigateToCheckout(_id) }} className='btn btn-dark'>Get Service</button>
         </div >
     );
