@@ -17,28 +17,28 @@
         "_id": "3",
         "title": "Structural Design",
         "price": "35000",
-        "desc": "",
+        "desc": "Structural part of a building is like the skeleton. A good quality structural design ensures the savefy and also the strong support for the exterior part. As a civil Engineering consultant, I provide the full analysis of the structure along with detail layout.",
         "imageUrl": "./images/service-3.jpg"
     },
     {
         "_id": "4",
         "title": "Fire Safety Assessment",
         "price": "15000",
-        "desc": "",
+        "desc": "Fire Hazard is one of a common problem for highrise building. Proper assessment and required safety measure can minimize the risk of fire hazard to almost zero. I also offer fire safety assessment and detail plan for safety measure.",
         "imageUrl": "./images/service-4.jpg"
     },
     {
         "_id": "5",
         "title": "Plumbing Solution",
         "price": "18000",
-        "desc": "",
+        "desc": "One of my expertise is plumbing solution for buildings. Well engineered plumbing solution ensures the reliable water and swerage service of long lasting time.",
         "imageUrl": "./images/service-5.jpg"
     },
     {
         "_id": "6",
         "title": "Cost Estimate",
         "price": "20000",
-        "desc": "",
+        "desc": "Cost exstimate is an essential part of construction management. A well planned estimate can reduce the cost of construction as well as the sudden hazardous situations.",
         "imageUrl": "./images/service-6.jpg"
     }
 ]
