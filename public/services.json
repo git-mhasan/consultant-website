@@ -33,5 +33,12 @@
         "price": "18000",
         "desc": "",
         "imageUrl": "./images/service-2.jpg"
+    },
+    {
+        "_id": "6",
+        "title": "Cost Estimate",
+        "price": "20000",
+        "desc": "",
+        "imageUrl": "./images/service-2.jpg"
     }
 ]

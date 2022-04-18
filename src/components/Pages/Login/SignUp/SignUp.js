@@ -1,9 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.init';
+import Loading from '../../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     const nameRef = useRef('');
@@ -35,15 +38,18 @@ const SignUp = () => {
         await updateProfile({ displayName: name });
     }
     if (error || errorUpdate) {
-        errorMsg = <div className='text-danger text-center' style={{ width: "500px", height: "100px" }}>
-            <p className='mt-3'>Error: {error?.message} {errorUpdate?.message}</p>
-        </div>
+        // errorMsg = <div className='text-danger text-center' style={{ width: "500px", height: "100px" }}>
+        //     <p className='mt-3'>Error: {error?.message} {errorUpdate?.message}</p>
+        // </div>
+        errorMsg = error?.message;
+        toast(errorMsg);
     }
 
     if (loading || updating) {
-        errorMsg = <div className='text-primary text-center' style={{ width: "500px", height: "100px" }}>
-            <p className='mt-3'>Loading ...</p>
-        </div>
+        // errorMsg = <div className='text-primary text-center' style={{ width: "500px", height: "100px" }}>
+        //     <p className='mt-3'>Loading ...</p>
+        // </div>
+        return <Loading></Loading>;
     }
 
     if (user) {
@@ -79,7 +85,8 @@ const SignUp = () => {
                     </Form>
                 </div>
             </div >
-            {errorMsg}
+            <ToastContainer />
+            {/* {errorMsg} */}
         </div >
     );
 };

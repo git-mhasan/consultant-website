@@ -51,11 +51,11 @@ const Home = () => {
 
             {/* -----------------review section ---------------------*/}
 
-            <div className='mb-5'>
+            <div className='container my-5'>
 
                 <div className='my-5'>
-                    <h2 className='my-5 text-2xl font-bold'>What my Client says</h2>
-                    <div className='d-flex justify-content-between mb-5'>
+                    <h2 className='mt-5 text-2xl font-bold'>What my Client says</h2>
+                    <div className='row mx-auto'>
                         {
                             reviews.map(review => <ReviewCard
                                 key={review.id}

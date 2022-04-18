@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./Service.css"
 
 const Service = ({ service }) => {
     const { title, price, desc, imageUrl } = service;
+    const navigate = useNavigate();
     // console.log()
     return (
         <div className='service-card border border-gray-400 m-8 shadow-lg' >
@@ -14,7 +16,7 @@ const Service = ({ service }) => {
                 </div>
             </div>
             <p className='text-justify mx-4 mt-3'>{desc?.length > 100 ? desc?.slice(0, 100) + "..." : desc}</p>
-            <button className='btn btn-dark'>Get Appointment</button>
+            <button onClick={() => { navigate("/checkout") }} className='btn btn-dark'>Get Service</button>
         </div >
     );
 };

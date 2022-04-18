@@ -1,9 +1,13 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.init';
+import Loading from '../../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
     const emailRef = useRef('');
@@ -20,6 +24,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     const handleLoginWithEmail = (event) => {
         event.preventDefault();
@@ -29,16 +34,25 @@ const Login = () => {
         signInWithEmailAndPassword(email, pass);
     }
 
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email to: ' + email);
+        }
+        else {
+            toast('Please enter your email.')
+        }
+    }
+
     if (error) {
-        errorMsg = <div className='text-danger text-center' style={{ width: "500px", height: "100px" }}>
-            <p className='mt-3'>Error: {error?.message}</p>
-        </div>
+        errorMsg = error.message;
+        toast(errorMsg);
     }
 
     if (loading) {
-        errorMsg = <div className='text-primary text-center' style={{ width: "500px", height: "100px" }}>
-            <p className='mt-3'>Loading ...</p>
-        </div>
+
+        return <Loading></Loading>;
     }
 
     if (user) {
@@ -63,7 +77,8 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control ref={passRef} type="password" placeholder="Password" required />
                         </Form.Group>
-                        <p>Not Registered? <Link to="/signup">Sign Up</Link></p>
+                        <p >Not Registered? <Link to="/signup">Sign Up</Link></p>
+                        <p >Forget Passwork? <Link to="" onClick={resetPassword}>Reset Password</Link> </p>
                         <Button variant="dark mx-auto d-block" type="submit">
                             Submit
                         </Button>
@@ -71,7 +86,7 @@ const Login = () => {
                 </div>
 
             </div>
-            {errorMsg}
+            <ToastContainer />
         </div>
     );
 };
